@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import React from 'react';
+import CardsChat from './page';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,3 +22,28 @@ export default function RootLayout({
     </html>
   )
 }
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div>
+      <header>
+        {/ LLMediator /}
+      </header>
+      <main className="flex justify-center items-center min-h-screen">
+        {children}
+      </main>
+      <footer>
+        {/Copyright by Jinzhe Tan/}
+      </footer>
+    </div>
+  );
+}
+
+export function App() {
+  return (
+    <Layout>
+      <CardsChat />
+    </Layout>
+  );
+}
+
